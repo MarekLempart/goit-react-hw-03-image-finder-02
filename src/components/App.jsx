@@ -1,4 +1,4 @@
-import { getSearch } from 'api/getSearch';
+import { getSearchImages } from 'api/getSearch';
 import { Button } from 'components/Button/Button';
 import { Loader } from 'components/Loader/Loader';
 import { Component } from 'react';
@@ -31,7 +31,7 @@ export class App extends Component {
   getFunc = (text, page) => {
     this.setState({ loading: true });
 
-    getSearch(text, page)
+    getSearchImages(text, page)
       .then(resp => resp.json())
       .then(data => {
         if (data.hits.length === 0) {
